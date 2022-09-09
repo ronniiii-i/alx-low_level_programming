@@ -20,7 +20,4 @@ int main(void)
 		printf("%d is negative\n", n);
 
 	return (0);
-}/* more headers goes there */
-
-/* betty style doc for function main goes there */
-
+} 
