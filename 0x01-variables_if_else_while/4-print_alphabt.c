@@ -13,7 +13,7 @@ int main(void)
 
 	for (low = 'a'; low <= 'z'; low++)
 	{
-		if(low != e && low != q)
+		if (low != e && low != q)
 			putchar(low);
 	}
 	printf("\n");
