@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - check the code
  *
@@ -7,6 +6,14 @@
  */
 int main(void)
 {
-    print_alphabet();
-    return (0);
+	char c = 'a';
+
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+	}
+	_putchar('\n');
+
+	return (0);
 }
