@@ -1,11 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
  * Description: main - Print out a string to stdout.
  * Return: 0 if successfull.
  */
 int main(void)
 {
-	printf("_putchar\n");
+	char putchar[] = "_putchar";
+	int i = 0;
+
+	while (putchar[i] != '\0')
+	{
+		_putchar(putchar[i]);
+		i++;
+	}
+	_putchar('\n');
+
 	return (0);
 }
