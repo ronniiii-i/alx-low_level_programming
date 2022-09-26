@@ -2,23 +2,22 @@
 #include "main.h"
 /**
  * _strstr - locates a character in a string
- * @haystack: pointer where we search for charachter
+ * @haystack: pointer where we search for character
  * @needle: character we search for
  * Return: NULL if character is not found, return pointer
  */
-char *_strstr(char *haystack, char *needle)
+char +_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	char *str = haystack;
+	char *c = needle;
+	int i;
 
-	for (i = 0; haystack[i] != '\0'; i++)
+	while (*str != '\0')
 	{
-		for (j = 0; needle[j] != '\0'; j++)
-		{
-			if (haystack[i + j] != needle[j])
-				break;
-		}
-		if (!needle[j])
-			return (&haystack[i]);
+		for (i = 0; *c != '\0'; i++)
+			if (*(str + i) == *(c + i))
+				return(str);
+		str++;
 	}
-	return (NULL);
+	return (0);
 }
