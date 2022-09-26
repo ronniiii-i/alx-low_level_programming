@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  * _strpbrk - locates a character in a string
@@ -9,13 +9,15 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *str = s;
+	char *s1 = s - 1;
 	int i;
 
-	while (*str != '\0')
+	do {
+		s1++;
 		for (i = 0; *(accept + i) != '\0'; i++)
-			if (*str == *(accept + i))
-				return(str);
-		str++;
+			if (*s1 == *(accept + i))
+				return (s1);
+	} while (*s1 != '\0');
+
 	return (0);
 }
