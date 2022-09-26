@@ -9,7 +9,7 @@
 
 char *_strchr(char *s, char c)
 {
-	char *str = s;
+	char *str = s - 1;
 
 	for (; *str != '\0'; str++)
 		if (*str == c)
