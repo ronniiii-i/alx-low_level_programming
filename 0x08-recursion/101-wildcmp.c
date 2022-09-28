@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 int cmp(char *c1, char *c2);
 
