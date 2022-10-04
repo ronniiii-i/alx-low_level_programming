@@ -9,7 +9,7 @@ char *_strdup(char *str)
 {
 	char *s = str; /*to access the address of the string*/
 	char *ptr; /*pointer for string*/
-	unsigned int i = 1, j;/*i to get length of str and j for loop*/
+	unsigned int i = 0, j;/*i to get length of str and j for loop*/
 
 	if (s == NULL)
 		return (NULL);
