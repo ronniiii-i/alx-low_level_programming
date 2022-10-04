@@ -1,0 +1,7 @@
+#compiled files
+*
+!/**/
+!*.*
+*.o
+#git automated actions
+gitact
