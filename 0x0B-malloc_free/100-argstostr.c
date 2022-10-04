@@ -1,54 +1,52 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
 /**
- * _strlen - get length
- * @c: string
- * Return: returns length
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
  */
 
-int _strlen(char *c)
+
+int _strlen(char *s)
 {
-	int len;
-
-	for (len = 0; c[len] != '\0'; len++)
-		;
-
-	return (len);
+int size = 0;
+for (; s[size] != '\0'; size++)
+;
+return (size);
 }
 
 /**
- * argstostr - concat str
- * @ac: number of args
- * @av: args
- * Return: returns a pointer to the two strings concatenated, or NULL if fails
+ * *argstostr - description
+ * @ac: int
+ * @av: arguments
+ * Return: string
  */
 
 char *argstostr(int ac, char **av)
 {
-	char *ptr;
-	int x, y, len = 0, c;
+int i = 0, nc = 0, j = 0, cmpt = 0;
+char *s;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
+if (ac == 0 || av == NULL)
+	return (NULL);
 
-	for (x = 0; x < ac; x++)
-		len += _strlen(av[x]);
+for (; i < ac; i++, nc++)
+	nc += _strlen(av[i]);
 
-	ptr = malloc((len + ac + 1) * sizeof(char));
+s = malloc(sizeof(char) * nc + 1);
+if (s == 0)
+	return (NULL);
 
-	if (!ptr)
-		return (NULL);
+for (i = 0; i < ac; i++)
+{
+	for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+		s[cmpt] = av[i][j];
 
-	for (x = 0; x < ac; x++)
-	{
-		for (y = 0; av[x][y] != '\0'; y++, c++)
-			ptr[c] = av[x][y];
-		ptr[c] = '\n';
-		c++;
-	}
-	ptr[c] = '\0';
-	return (ptr);
+	s[cmpt] = '\n';
+	cmpt++;
+}
+s[cmpt] = '\0';
+
+return (s);
 }
