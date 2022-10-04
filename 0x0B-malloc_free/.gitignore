@@ -1,7 +1,9 @@
-#compiled files
+#files
 *
 !/**/
 !*.*
+!README.md
 *.o
+*.out
 #git automated actions
 gitact
